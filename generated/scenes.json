@@ -1,0 +1,859 @@
+[
+  {
+    "id": "exterior_fachada",
+    "title": "Fachada",
+    "detail": "A visita começa aqui.",
+    "floor": "Exterior",
+    "view": {
+      "yaw": 0,
+      "pitch": 0.15,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "entrada_frontal",
+        "label": "Ir para Entrada coberta",
+        "yaw": 0.16069691768634037,
+        "pitch": -0.29874599896357135,
+        "radius": 0.35
+      }
+    ],
+    "position": [
+      8.1,
+      -6.7
+    ],
+    "rotation": 0.24135557,
+    "image": "/assets/exterior_fachada.png",
+    "optimizedImage": "/assets/exterior_fachada.webp",
+    "thumb": "/assets/exterior_fachada-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "entrada_frontal",
+    "title": "Entrada coberta",
+    "detail": "Entre o portão, a porta de entrada e a passagem lateral",
+    "floor": "Exterior",
+    "view": {
+      "yaw": 2.08,
+      "pitch": -0.12,
+      "fov": 108
+    },
+    "hotspots": [
+      {
+        "target": "exterior_fachada",
+        "label": "Ir para Fachada",
+        "yaw": -0.8748290703908445,
+        "pitch": -0.465749079985409,
+        "radius": 0.3
+      },
+      {
+        "target": "corredor",
+        "label": "Entrar no Corredor",
+        "yaw": 1.7531999588804368,
+        "pitch": -0.2532399940605077,
+        "radius": 0.22
+      },
+      {
+        "target": "passagem_jardim",
+        "label": "Ir para Passagem lateral",
+        "yaw": 2.1498835859402528,
+        "pitch": -0.18948726828303716,
+        "radius": 0.28
+      }
+    ],
+    "position": [
+      7.064219951629639,
+      -0.7126821875572205
+    ],
+    "rotation": 2.107912540435791,
+    "asset_revision": "entrada-v2",
+    "image": "/assets/entrada_frontal.png?v=entrada-v2",
+    "optimizedImage": "/assets/entrada_frontal.webp?v=entrada-v2",
+    "thumb": "/assets/entrada_frontal-thumb.jpg?v=entrada-v2",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "passagem_jardim",
+    "title": "Passagem lateral",
+    "detail": "Ligação entre a entrada e o jardim",
+    "floor": "Exterior",
+    "view": {
+      "yaw": 3.141592653589793,
+      "pitch": -0.05,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "entrada_frontal",
+        "label": "Ir para Entrada coberta",
+        "yaw": -2.9184183623020066,
+        "pitch": -0.2753174446758379,
+        "radius": 0.2
+      },
+      {
+        "target": "corredor",
+        "label": "Ir para Corredor",
+        "yaw": -1.345890877524376,
+        "pitch": -0.48345817047915085,
+        "radius": 0.17
+      },
+      {
+        "target": "jardim_passagem",
+        "label": "Ir para Jardim — Junto à passagem lateral",
+        "yaw": -0.02479272669123847,
+        "pitch": -0.2674072664555009,
+        "radius": 0.22
+      }
+    ],
+    "position": [
+      7.6,
+      4.9
+    ],
+    "rotation": 0,
+    "image": "/assets/passagem_jardim.png",
+    "optimizedImage": "/assets/passagem_jardim.webp",
+    "thumb": "/assets/passagem_jardim-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "corredor",
+    "title": "Corredor",
+    "detail": "Entrada e circulação",
+    "floor": "Rés do chão",
+    "view": {
+      "yaw": -0.28,
+      "pitch": -0.09,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "entrada_frontal",
+        "label": "Ir para Entrada coberta",
+        "yaw": 0.5064799881210154,
+        "pitch": -0.7313854373915358,
+        "radius": 0.15
+      },
+      {
+        "target": "wc_social",
+        "label": "Ir para WC social",
+        "yaw": -0.6764872568609364,
+        "pitch": -0.7738872545765162,
+        "radius": 0.12
+      },
+      {
+        "target": "escadas_patamar",
+        "label": "Ir para Patamar das escadas",
+        "yaw": -1.7602835950779336,
+        "pitch": -1.0041054309951594,
+        "radius": 0.15
+      },
+      {
+        "target": "sala_jantar_posicao2",
+        "label": "Ir para Sala de jantar — Junto à entrada",
+        "yaw": -2.9184581133686467,
+        "pitch": -0.9368108871189406,
+        "radius": 0.16
+      },
+      {
+        "target": "cozinha",
+        "label": "Ir para Cozinha",
+        "yaw": -0.18063272303616623,
+        "pitch": -0.46220726188666067,
+        "radius": 0.16
+      }
+    ],
+    "position": [
+      3.794937,
+      4.464003
+    ],
+    "rotation": -0.147418,
+    "image": "/assets/corredor.png",
+    "optimizedImage": "/assets/corredor.webp",
+    "thumb": "/assets/corredor-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "wc_social",
+    "title": "WC social",
+    "detail": "Junto à entrada",
+    "floor": "Rés do chão",
+    "view": {
+      "yaw": 0.3,
+      "pitch": -0.48,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "corredor",
+        "label": "Ir para Corredor",
+        "yaw": 1.427352693795588,
+        "pitch": -1.4291236028449623,
+        "radius": 0.08
+      }
+    ],
+    "position": [
+      2.853765,
+      5.154524
+    ],
+    "rotation": 1.185142,
+    "image": "/assets/wc_social.png",
+    "optimizedImage": "/assets/wc_social.webp",
+    "thumb": "/assets/wc_social-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "sala_jantar_posicao2",
+    "title": "Sala de jantar",
+    "detail": "Junto à entrada",
+    "floor": "Rés do chão",
+    "view": {
+      "yaw": 0,
+      "pitch": -0.25,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "sala_jantar",
+        "label": "Ir para Sala de jantar — Junto ao aparador",
+        "yaw": 0.6835708930584332,
+        "pitch": -0.48345817047915085,
+        "radius": 0.13
+      },
+      {
+        "target": "corredor",
+        "label": "Ir para Corredor",
+        "yaw": 2.167592676433995,
+        "pitch": -0.5401272600591244,
+        "radius": 0.2
+      }
+    ],
+    "position": [
+      4.17,
+      2.95
+    ],
+    "rotation": 2.116667,
+    "image": "/assets/sala_jantar_posicao2.png",
+    "optimizedImage": "/assets/sala_jantar_posicao2.webp",
+    "thumb": "/assets/sala_jantar_posicao2-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "sala_jantar",
+    "title": "Sala de jantar",
+    "detail": "Junto ao aparador",
+    "floor": "Rés do chão",
+    "view": {
+      "yaw": 0.55,
+      "pitch": -0.25,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "sala_jantar_posicao2",
+        "label": "Ir para Sala de jantar — Junto à entrada",
+        "yaw": -0.22191848296073305,
+        "pitch": -0.4872857538207373,
+        "radius": 0.16
+      }
+    ],
+    "position": [
+      0.648164,
+      0.70523
+    ],
+    "rotation": -0.540986,
+    "image": "/assets/sala_jantar.png",
+    "optimizedImage": "/assets/sala_jantar.webp",
+    "thumb": "/assets/sala_jantar-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "sala",
+    "title": "Sala de estar",
+    "detail": "Estar e receber",
+    "floor": "Rés do chão",
+    "view": {
+      "yaw": -1.05,
+      "pitch": -0.25,
+      "fov": 108
+    },
+    "hotspots": [
+      {
+        "target": "cozinha",
+        "label": "Ir para Cozinha",
+        "yaw": -0.127505451554941,
+        "pitch": -0.39137089991169355,
+        "radius": 0.18
+      }
+    ],
+    "position": [
+      5.94,
+      9.12
+    ],
+    "rotation": 1.91794228,
+    "image": "/assets/sala.png",
+    "optimizedImage": "/assets/sala.webp",
+    "thumb": "/assets/sala-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "cozinha",
+    "title": "Cozinha",
+    "detail": "O coração da casa",
+    "floor": "Rés do chão",
+    "view": {
+      "yaw": -0.37,
+      "pitch": -0.24,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "sala",
+        "label": "Ir para Sala de estar",
+        "yaw": -1.7248654140904502,
+        "pitch": -0.6711745297128137,
+        "radius": 0.18
+      },
+      {
+        "target": "corredor",
+        "label": "Ir para Corredor",
+        "yaw": -1.4486036023880782,
+        "pitch": -0.4303308989979256,
+        "radius": 0.15
+      },
+      {
+        "target": "jardim_ponto_cozinha",
+        "label": "Ir para Jardim — Junto à cozinha",
+        "yaw": 1.1440072458957196,
+        "pitch": -0.7845127088727611,
+        "radius": 0.15
+      }
+    ],
+    "position": [
+      2.959677,
+      9.175958
+    ],
+    "rotation": 2.052936,
+    "image": "/assets/cozinha.png",
+    "optimizedImage": "/assets/cozinha.webp",
+    "thumb": "/assets/cozinha-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "jardim_ponto_cozinha",
+    "title": "Jardim",
+    "detail": "Junto à cozinha",
+    "floor": "Exterior",
+    "view": {
+      "yaw": 0.35,
+      "pitch": -0.08,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "cozinha",
+        "label": "Ir para Cozinha",
+        "yaw": -3.070756291614826,
+        "pitch": -0.4763745342816542,
+        "radius": 0.18
+      },
+      {
+        "target": "jardim_passagem",
+        "label": "Ir para Jardim — Junto à passagem lateral",
+        "yaw": 2.2561381289027036,
+        "pitch": -0.3772036275167,
+        "radius": 0.18
+      },
+      {
+        "target": "jardim_fundo",
+        "label": "Ir para Jardim — Vista de regresso à casa",
+        "yaw": 0.34709817367733925,
+        "pitch": -0.49054180667664743,
+        "radius": 0.2
+      }
+    ],
+    "position": [
+      3.05,
+      13.9
+    ],
+    "rotation": 0,
+    "image": "/assets/jardim_ponto_cozinha.png",
+    "optimizedImage": "/assets/jardim_ponto_cozinha.webp",
+    "thumb": "/assets/jardim_ponto_cozinha-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "jardim_passagem",
+    "title": "Jardim",
+    "detail": "Junto à passagem lateral",
+    "floor": "Exterior",
+    "view": {
+      "yaw": -0.45,
+      "pitch": -0.08,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "jardim_ponto_cozinha",
+        "label": "Ir para Jardim — Junto à cozinha",
+        "yaw": -0.6219353292226842,
+        "pitch": -0.45173760552277453,
+        "radius": 0.16
+      },
+      {
+        "target": "jardim_fundo",
+        "label": "Ir para Jardim — Vista de regresso à casa",
+        "yaw": -0.5217114272160388,
+        "pitch": -0.2254980070715126,
+        "radius": 0.16
+      },
+      {
+        "target": "passagem_jardim",
+        "label": "Ir para Passagem lateral",
+        "yaw": 3.141592653589793,
+        "pitch": -0.45,
+        "radius": 0.25
+      }
+    ],
+    "position": [
+      7.460974,
+      10.648531
+    ],
+    "rotation": 0,
+    "details": [
+      {
+        "image": "/assets/jardim-frente-v10.avif",
+        "yaw": -0.45,
+        "pitch": -0.08,
+        "fov": 110,
+        "aspect": 1.5,
+        "feather": 0.06,
+        "sha256": "018f942022fa5a2a74c133651b7e72e050c4676df39f5ddbbc643c86448f2ac7"
+      },
+      {
+        "image": "/assets/jardim-tras-v10.avif",
+        "yaw": 3.141592653589793,
+        "pitch": 0,
+        "fov": 110,
+        "aspect": 1.5,
+        "feather": 0.18,
+        "sha256": "dcf0714ff211d110fcbc42dc62ed82758a48a937cad28890690f65205b1c5c10"
+      }
+    ],
+    "image": "/assets/jardim_passagem.png",
+    "optimizedImage": "/assets/jardim_passagem.webp",
+    "thumb": "/assets/jardim_passagem-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "jardim_fundo",
+    "title": "Jardim",
+    "detail": "Vista de regresso à casa",
+    "floor": "Exterior",
+    "view": {
+      "yaw": 0,
+      "pitch": -0.05,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "jardim_ponto_cozinha",
+        "label": "Ir para Jardim — Junto à cozinha",
+        "yaw": 0.09917090676495388,
+        "pitch": -0.15406908729555344,
+        "radius": 0.35
+      },
+      {
+        "target": "jardim_passagem",
+        "label": "Ir para Jardim — Junto à passagem lateral",
+        "yaw": -1.0873381563157458,
+        "pitch": -0.6038799858365949,
+        "radius": 0.2
+      }
+    ],
+    "position": [
+      2.52,
+      20.9
+    ],
+    "rotation": 3.141592653589793,
+    "image": "/assets/jardim_fundo.png",
+    "optimizedImage": "/assets/jardim_fundo.webp",
+    "thumb": "/assets/jardim_fundo-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "escadas_patamar",
+    "title": "Patamar das escadas",
+    "detail": "Entre os pisos",
+    "floor": "2.º piso",
+    "view": {
+      "yaw": -0.25,
+      "pitch": -0.12,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "corredor",
+        "label": "Ir para Corredor",
+        "yaw": 2.4898981234200956,
+        "pitch": -1.0466072481801396,
+        "radius": 0.14
+      },
+      {
+        "target": "corredor_piso1",
+        "label": "Ir para Corredor dos quartos",
+        "yaw": -0.1310472696536893,
+        "pitch": -0.47283271618290557,
+        "radius": 0.18
+      }
+    ],
+    "position": [
+      2.104584,
+      5.929982
+    ],
+    "rotation": -1.957323,
+    "image": "/assets/escadas_patamar.png",
+    "optimizedImage": "/assets/escadas_patamar.webp",
+    "thumb": "/assets/escadas_patamar-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "corredor_piso1",
+    "title": "Corredor dos quartos",
+    "detail": "Distribuição do 2.º piso",
+    "floor": "2.º piso",
+    "view": {
+      "yaw": 0,
+      "pitch": -0.07,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "suite",
+        "label": "Ir para Suíte",
+        "yaw": -1.7461163226829401,
+        "pitch": -0.5897127134416017,
+        "radius": 0.16
+      },
+      {
+        "target": "wc_f2",
+        "label": "Ir para Casa de banho",
+        "yaw": -0.3789745365660743,
+        "pitch": -0.6605490754165688,
+        "radius": 0.15
+      },
+      {
+        "target": "quarto_varanda_porta",
+        "label": "Ir para Quarto com varanda — Vista junto à porta",
+        "yaw": 0.6835708930584332,
+        "pitch": -0.6251308944290851,
+        "radius": 0.14
+      },
+      {
+        "target": "quarto_secretaria",
+        "label": "Ir para Quarto com secretária",
+        "yaw": 1.427352693795588,
+        "pitch": -0.5472108962566213,
+        "radius": 0.15
+      },
+      {
+        "target": "escadas_patamar",
+        "label": "Ir para Patamar das escadas",
+        "yaw": -2.762618117023719,
+        "pitch": -0.8376399803539867,
+        "radius": 0.14
+      },
+      {
+        "target": "sotao_chegada",
+        "label": "Ir para Chegada ao sótão",
+        "yaw": 2.43677085193887,
+        "pitch": -0.7420108916877808,
+        "radius": 0.16
+      }
+    ],
+    "position": [
+      3.975626,
+      5.126992
+    ],
+    "rotation": -1.603895,
+    "image": "/assets/corredor_piso1.png",
+    "optimizedImage": "/assets/corredor_piso1.webp",
+    "thumb": "/assets/corredor_piso1-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "suite",
+    "title": "Suíte",
+    "detail": "Quarto principal",
+    "floor": "2.º piso",
+    "view": {
+      "yaw": 0,
+      "pitch": -0.07,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "corredor_piso1",
+        "label": "Ir para Corredor dos quartos",
+        "yaw": -1.090879974414494,
+        "pitch": -0.664090893515317,
+        "radius": 0.13
+      },
+      {
+        "target": "banho_suite",
+        "label": "Ir para Casa de banho da suíte",
+        "yaw": -2.790952661813706,
+        "pitch": -0.9828545224026692,
+        "radius": 0.12
+      }
+    ],
+    "position": [
+      4.72,
+      8.28
+    ],
+    "rotation": 1.570796,
+    "image": "/assets/suite.png",
+    "optimizedImage": "/assets/suite.webp",
+    "thumb": "/assets/suite-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "banho_suite",
+    "title": "Casa de banho da suíte",
+    "detail": "Luz e privacidade",
+    "floor": "2.º piso",
+    "view": {
+      "yaw": 0,
+      "pitch": -0.07,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "suite",
+        "label": "Ir para Suíte",
+        "yaw": 1.1617163363894614,
+        "pitch": -1.0749417929701264,
+        "radius": 0.12
+      }
+    ],
+    "position": [
+      5.51,
+      8.72
+    ],
+    "rotation": -2.123215,
+    "image": "/assets/banho_suite.png",
+    "optimizedImage": "/assets/banho_suite.webp",
+    "thumb": "/assets/banho_suite-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "wc_f2",
+    "title": "Casa de banho",
+    "detail": "2.º piso",
+    "floor": "2.º piso",
+    "view": {
+      "yaw": 0,
+      "pitch": -0.2,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "corredor_piso1",
+        "label": "Ir para Corredor dos quartos",
+        "yaw": -2.291556309890187,
+        "pitch": -0.7880545269715095,
+        "radius": 0.14
+      }
+    ],
+    "position": [
+      5.6,
+      5.48
+    ],
+    "rotation": -0.785398,
+    "image": "/assets/wc_f2.png",
+    "optimizedImage": "/assets/wc_f2.webp",
+    "thumb": "/assets/wc_f2-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "quarto_varanda_porta",
+    "title": "Quarto com varanda",
+    "detail": "Vista junto à porta",
+    "floor": "2.º piso",
+    "view": {
+      "yaw": 0.25,
+      "pitch": -0.2,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "corredor_piso1",
+        "label": "Ir para Corredor dos quartos",
+        "yaw": 1.990501771496577,
+        "pitch": -0.8872254337364637,
+        "radius": 0.12
+      },
+      {
+        "target": "quarto_varanda_roupeiro",
+        "label": "Ir para Quarto com varanda — Vista junto ao roupeiro",
+        "yaw": 0.9421236142670633,
+        "pitch": -0.6995090745028004,
+        "radius": 0.12
+      }
+    ],
+    "position": [
+      5.91,
+      4.45
+    ],
+    "rotation": -2.287977,
+    "image": "/assets/quarto_varanda_porta.png",
+    "optimizedImage": "/assets/quarto_varanda_porta.webp",
+    "thumb": "/assets/quarto_varanda_porta-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "quarto_varanda_roupeiro",
+    "title": "Quarto com varanda",
+    "detail": "Vista junto ao roupeiro",
+    "floor": "2.º piso",
+    "view": {
+      "yaw": -0.25,
+      "pitch": -0.12,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "quarto_varanda_porta",
+        "label": "Ir para Quarto com varanda — Vista junto à porta",
+        "yaw": 2.6669890283575137,
+        "pitch": -0.7172181649965423,
+        "radius": 0.14
+      }
+    ],
+    "position": [
+      6.32,
+      1.83
+    ],
+    "rotation": 0.567302,
+    "image": "/assets/quarto_varanda_roupeiro.png",
+    "optimizedImage": "/assets/quarto_varanda_roupeiro.webp",
+    "thumb": "/assets/quarto_varanda_roupeiro-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "quarto_secretaria",
+    "asset_revision": "altura-v2",
+    "title": "Quarto com secretária",
+    "detail": "Descanso e trabalho",
+    "floor": "2.º piso",
+    "view": {
+      "yaw": 0,
+      "pitch": 0,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "corredor_piso1",
+        "label": "Ir para Corredor dos quartos",
+        "yaw": -2.8936653866774082,
+        "pitch": -1.3937054218574787,
+        "radius": 0.08
+      }
+    ],
+    "position": [
+      3.3,
+      3.25
+    ],
+    "rotation": 2.191519,
+    "image": "/assets/quarto_secretaria.png?v=altura-v2",
+    "optimizedImage": "/assets/quarto_secretaria.webp?v=altura-v2",
+    "thumb": "/assets/quarto_secretaria-thumb.jpg?v=altura-v2",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "sotao_chegada",
+    "title": "Chegada ao sótão",
+    "detail": "Patamar das escadas",
+    "floor": "3.º piso",
+    "view": {
+      "yaw": -0.4,
+      "pitch": -0.12,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "sotao_bilhar",
+        "label": "Ir para Zona de bilhar",
+        "yaw": -0.2727199936036235,
+        "pitch": -0.2532399940605077,
+        "radius": 0.24
+      },
+      {
+        "target": "corredor_piso1",
+        "label": "Ir para Corredor dos quartos",
+        "yaw": 0.18417454113491455,
+        "pitch": -0.8659745251439734,
+        "radius": 0.14
+      }
+    ],
+    "position": [
+      0.731764,
+      4.92126
+    ],
+    "rotation": -1.570796,
+    "image": "/assets/sotao_chegada.png",
+    "optimizedImage": "/assets/sotao_chegada.webp",
+    "thumb": "/assets/sotao_chegada-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "id": "sotao_bilhar",
+    "title": "Zona de bilhar",
+    "detail": "Um espaço para descontrair",
+    "floor": "3.º piso",
+    "view": {
+      "yaw": 0,
+      "pitch": -0.2,
+      "fov": 115
+    },
+    "hotspots": [
+      {
+        "target": "sotao_chegada",
+        "label": "Ir para Chegada ao sótão",
+        "yaw": -1.218385425969435,
+        "pitch": -0.5897127134416017,
+        "radius": 0.18
+      }
+    ],
+    "position": [
+      7.287318,
+      4.939054
+    ],
+    "rotation": 1.570796,
+    "image": "/assets/sotao_bilhar.png",
+    "optimizedImage": "/assets/sotao_bilhar.webp",
+    "thumb": "/assets/sotao_bilhar-thumb.jpg",
+    "width": 1774,
+    "height": 887
+  }
+]
