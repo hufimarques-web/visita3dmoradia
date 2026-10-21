@@ -1,0 +1,137 @@
+{
+  "floorPlan": "/assets/planta-3d-97e5aa46ae.webp",
+  "panoramas": [
+    {
+      "id": "exterior_fachada",
+      "bytes": 470562,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "entrada_frontal",
+      "bytes": 350022,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "passagem_jardim",
+      "bytes": 154628,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "corredor",
+      "bytes": 199402,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "wc_social",
+      "bytes": 219278,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "sala_jantar_posicao2",
+      "bytes": 221388,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "sala_jantar",
+      "bytes": 199192,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "sala",
+      "bytes": 282302,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "cozinha",
+      "bytes": 266928,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "jardim_ponto_cozinha",
+      "bytes": 495236,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "jardim_passagem",
+      "bytes": 380212,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "jardim_fundo",
+      "bytes": 473468,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "escadas_patamar",
+      "bytes": 177844,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "corredor_piso1",
+      "bytes": 182412,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "suite",
+      "bytes": 206654,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "banho_suite",
+      "bytes": 188970,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "wc_f2",
+      "bytes": 163208,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "quarto_varanda_porta",
+      "bytes": 136326,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "quarto_varanda_roupeiro",
+      "bytes": 262150,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "quarto_secretaria",
+      "bytes": 158736,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "sotao_chegada",
+      "bytes": 202236,
+      "width": 1774,
+      "height": 887
+    },
+    {
+      "id": "sotao_bilhar",
+      "bytes": 217918,
+      "width": 1774,
+      "height": 887
+    }
+  ]
+}

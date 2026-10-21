@@ -2,8 +2,21 @@ import './globals.css';
 import './mobile.css';
 
 export const metadata = {
-  title: 'Moradia — Visita virtual',
-  description: 'Entre e explore a moradia numa visita virtual de 360 graus.',
+  metadataBase: new URL('https://visita3dmoradia-vvtu.vercel.app'),
+  title: 'Domaine XXV — Visite a moradia em 360°',
+  description: 'Conheça a Domaine XXV em Oliveirinha, Aveiro. Explore a sala, a cozinha, os quartos e o jardim numa visita imersiva em 360°.',
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website', locale: 'pt_PT', url: '/', siteName: 'Domaine XXV',
+    title: 'Domaine XXV — Visite a moradia em 360°',
+    description: 'Oliveirinha, Aveiro · Entre e descubra a sua próxima casa.',
+    images: [{ url: '/assets/domaine-xxv-fachada-social.jpg', width: 1200, height: 630, alt: 'Fachada da Domaine XXV em Oliveirinha, Aveiro', type: 'image/jpeg' }],
+  },
+  twitter: {
+    card: 'summary_large_image', title: 'Domaine XXV — Visite a moradia em 360°',
+    description: 'Oliveirinha, Aveiro · Entre e descubra a sua próxima casa.',
+    images: ['/assets/domaine-xxv-fachada-social.jpg'],
+  },
   icons: { icon: '/assets/mark.svg' },
 };
 export const viewport = {

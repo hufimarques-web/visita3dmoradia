@@ -50,3 +50,22 @@ dialog{height:100vh;height:100dvh;padding-top:max(24px,env(safe-area-inset-top))
   dialog,#map-dialog{width:min(100%,480px);padding-top:max(12px,env(safe-area-inset-top))}.panel-heading{padding-bottom:8px}.panel-heading .eyebrow{display:none}.panel-heading h2{font-size:24px}.floor-tabs{margin-bottom:8px;padding-bottom:2px}.floor-tabs button{min-height:44px}.panel-note{display:none}
 }
 @media(max-height:500px) and (max-width:660px) and (orientation:landscape){.next-view{width:52px;height:50px;justify-content:center}.next-view span{display:none}}
+
+/* Domaine XXV: quiet navigation, without dimming or blurring the active panorama. */
+.panorama{isolation:isolate}
+.brand span{letter-spacing:2.4px;white-space:nowrap}
+.brand small{font-size:10px;letter-spacing:1px;font-weight:400;text-transform:none}
+.scene-transition{z-index:1;pointer-events:none}
+.hotspots{z-index:2}
+.hotspot .floor-ring{animation:point-arrival .35s ease both}
+@keyframes point-arrival{from{opacity:0}to{opacity:1}}
+.loading{top:auto;bottom:115px;padding:10px 15px;font-size:12px;border-radius:24px;animation:load-notice .2s .35s both}
+@keyframes load-notice{from{opacity:0}to{opacity:1}}
+.panorama.changing{cursor:progress}
+@media(max-width:800px),(max-height:500px) and (orientation:landscape){
+  .brand span{font-size:12px;letter-spacing:1.5px}.brand small{font-size:8px;letter-spacing:.4px;display:block}
+  .topbar{gap:12px}.top-actions{flex-shrink:0}.loading{bottom:180px;font-size:11px}
+}
+@media(max-width:380px){.explore-button>span{display:none}.explore-button{width:44px;height:44px;padding:12px}.brand span{font-size:12px}.brand small{font-size:8px}}
+@media(max-height:500px) and (orientation:landscape){.loading{bottom:90px}}
+@media(prefers-reduced-motion:reduce){.loading,.hotspot .floor-ring{animation:none}.scene-transition{display:none}}

@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "check": "node scripts/validate-tour.mjs"
+    "check": "node scripts/validate-tour.mjs",
+    "prepare:media": "node scripts/prepare-media.mjs",
+    "test": "node --test scripts/panorama-loading.test.mjs"
   },
   "dependencies": {
     "next": "16.4.2",
@@ -15,5 +17,8 @@
   },
   "engines": {
     "node": ">=20.9.0"
+  },
+  "devDependencies": {
+    "sharp": "0.35.5"
   }
 }

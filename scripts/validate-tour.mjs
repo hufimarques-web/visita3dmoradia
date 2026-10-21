@@ -7,12 +7,15 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const scenes = JSON.parse(fs.readFileSync(path.join(root, 'generated/scenes.json'), 'utf8'));
 const byId = new Map(scenes.map(scene => [scene.id, scene]));
 assert.equal(byId.size, scenes.length, 'Duplicate scene identifiers');
-assert.equal(scenes[0]?.id, 'exterior_fachada', 'The tour must start at the exterior');
+assert.equal(scenes[0]?.id, 'sala', 'The tour must start in the living room');
+const media = JSON.parse(fs.readFileSync(path.join(root, 'generated/media.json'), 'utf8'));
 let links = 0;
-const assets = new Set(['/assets/planta-3d-referencia.png', '/assets/mark.svg']);
+const assets = new Set([media.floorPlan, '/assets/mark.svg', '/assets/domaine-xxv-fachada-social.jpg']);
 
 for (const scene of scenes) {
   assert(scene.title && scene.floor, `Missing scene label: ${scene.id}`);
+  assert(['Exterior', 'R/C', '1.º andar', 'Sótão'].includes(scene.floor), `Invalid floor: ${scene.floor}`);
+  assert(fs.statSync(path.join(root, 'public', scene.optimizedImage)).size < 750_000, `Panorama exceeds mobile budget: ${scene.id}`);
   for (const field of ['yaw', 'pitch', 'fov']) assert(Number.isFinite(scene.view[field]), `Invalid ${field}: ${scene.id}`);
   assert(scene.view.fov >= 65 && scene.view.fov <= 120, `Unsupported field of view: ${scene.id}`);
   for (const field of ['image', 'optimizedImage', 'thumb']) { assert(scene[field], `Missing ${field}: ${scene.id}`); assets.add(scene[field]); }

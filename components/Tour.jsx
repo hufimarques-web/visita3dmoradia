@@ -6,7 +6,7 @@ import { Panorama, clamp } from '../lib/panorama';
 import { drawMap } from '../lib/map';
 
 const byId = new Map(scenes.map(scene => [scene.id, scene]));
-const floors = ['Exterior', 'Rés do chão', '2.º piso', '3.º piso'];
+const floors = ['Exterior', 'R/C', '1.º andar', 'Sótão'];
 const compactQuery = '(max-width:800px), (max-height:500px) and (orientation:landscape)';
 
 function Icon({ name }) {
@@ -27,8 +27,9 @@ export default function Tour() {
   const pins = useRef(new Map()), sceneRef = useRef(scenes[0]), frame = useRef(null);
   const directions = useRef({}), navigateRef = useRef(null), mapPreference = useRef(null);
   const [current, setCurrent] = useState(scenes[0]);
-  const [loading, setLoading] = useState('Fachada'), [error, setError] = useState('');
-  const [floor, setFloor] = useState('Todas'), [mapFloor, setMapFloor] = useState('Exterior');
+  const [loading, setLoading] = useState(scenes[0].title), [error, setError] = useState('');
+  const [floor, setFloor] = useState('Todas'), [mapFloor, setMapFloor] = useState(scenes[0].floor);
+  const [roomsOpen, setRoomsOpen] = useState(false), [mapOpen, setMapOpen] = useState(false);
   const [compact, setCompact] = useState(false), [collapsed, setCollapsed] = useState(false);
   const [rotating, setRotating] = useState(false), [hint, setHint] = useState(true);
   const [fullscreen, setFullscreen] = useState(false), [canFullscreen, setCanFullscreen] = useState(false);
@@ -88,8 +89,8 @@ export default function Tour() {
       setLoading(scene.title); setError('');
       try {
         const item=await renderer.load(scene); if(signal.aborted||request!==token)return;
-        sceneRef.current=scene; renderer.use(item,scene.view); setCurrent(scene); setMapFloor(scene.floor); setLoading('');
-        document.title=scene.title+' — Moradia · Visita virtual';
+        sceneRef.current=scene; renderer.transitionTo(item,scene.view); setCurrent(scene); setMapFloor(scene.floor); setLoading('');
+        document.title='Domaine XXV — Visite a moradia em 360°';
         renderer.canvas.setAttribute('aria-label',scene.title+'. Panorama de 360 graus. Arraste ou use as teclas de direção.');
         if(historyMode==='replace')history.replaceState({scene:id},'','#'+id);
         else if(historyMode==='push'&&location.hash!=='#'+id)history.pushState({scene:id},'','#'+id);
@@ -130,15 +131,18 @@ export default function Tour() {
   }, [stopRotation,dismissHint]);
 
   useEffect(()=>{
-    directions.current.mini=drawMap(miniMap.current,scenes,current,current.floor,go);
-    directions.current.full=drawMap(fullMap.current,scenes,current,mapFloor,go,true);
+    if(loading)return;
+    if(!collapsed)directions.current.mini=drawMap(miniMap.current,scenes,current,current.floor,go);
+    else {miniMap.current.replaceChildren();directions.current.mini=null;}
+    if(mapOpen)directions.current.full=drawMap(fullMap.current,scenes,current,mapFloor,go,true);
+    else {fullMap.current.replaceChildren();directions.current.full=null;}
     if(mapBody.current)mapBody.current.scrollTop=0;
     engine.current?.invalidate();
-  },[current,mapFloor,go]);
+  },[current,mapFloor,go,loading,collapsed,mapOpen]);
   useEffect(()=>{engine.current?.invalidate();},[collapsed,compact,loading]);
 
-  const openRooms=()=>{stopRotation();setFloor('Todas');roomsDialog.current.showModal();};
-  const openMap=()=>{stopRotation();setMapFloor(current.floor);mapDialog.current.showModal();};
+  const openRooms=()=>{stopRotation();setFloor('Todas');setRoomsOpen(true);roomsDialog.current.showModal();};
+  const openMap=()=>{stopRotation();setMapFloor(current.floor);setMapOpen(true);mapDialog.current.showModal();};
   const reset=()=>{stopRotation();dismissHint();engine.current?.setView(current.view);};
   const zoom=delta=>{stopRotation();dismissHint();if(engine.current)engine.current.setView({fov:engine.current.view.fov+delta});};
   const rotate=()=>{if(!engine.current?.current)return;const value=!engine.current.auto;engine.current.setAuto(value);setRotating(value);dismissHint();};
@@ -146,7 +150,7 @@ export default function Tour() {
   const toggleFullscreen=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await root.current.requestFullscreen();}catch{setCanFullscreen(false);}};
 
   return <>
-    <main id="tour" ref={root} aria-label="Visita virtual à moradia">
+    <main id="tour" ref={root} aria-label="Domaine XXV — Visita virtual à moradia" aria-busy={Boolean(loading)}>
       <div className={'panorama'+(loading?' changing':'')} id="panorama" ref={stage}>
         <div className="canvas-host" ref={host}/>
         <div className="hotspots" id="hotspots" aria-label="Ligações para outras vistas" style={{visibility:loading?'hidden':undefined}}>
@@ -157,10 +161,10 @@ export default function Tour() {
       </div>
       <div className="shade" aria-hidden="true"/>
       <header className="topbar">
-        <a className="brand" href="#exterior_fachada" aria-label="Moradia, voltar ao exterior" onClick={e=>{e.preventDefault();go('exterior_fachada');}}>
-          <svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 33V14L16 3l13 11v19H3Z"/><path d="M12 33V22h8v11M16 3v10"/></svg><span>MORADIA<small>VISITA VIRTUAL</small></span>
+        <a className="brand" href="#sala" aria-label="Domaine XXV · Oliveirinha, Aveiro — voltar à sala" onClick={e=>{e.preventDefault();go('sala');}}>
+          <svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 33V14L16 3l13 11v19H3Z"/><path d="M12 33V22h8v11M16 3v10"/></svg><span>DOMAINE XXV<small>Oliveirinha, Aveiro</small></span>
         </a>
-        <div className="top-actions"><span className="view-badge">360°</span><button className="explore-button" id="open-menu" aria-haspopup="dialog" onClick={openRooms}><span>Explorar a casa</span><Icon name="grid"/></button></div>
+        <div className="top-actions"><span className="view-badge">360°</span><button className="explore-button" id="open-menu" aria-label="Explorar a casa" aria-haspopup="dialog" onClick={openRooms}><span>Explorar a casa</span><Icon name="grid"/></button></div>
       </header>
       <div className="direction-dial" aria-label="Orientação da vista"><div className="dial-ticks" id="dial-ticks"/><span className="dial-pointer" aria-hidden="true">▲</span><strong id="direction-angle">0°</strong><small>ORIENTAÇÃO</small></div>
       <aside className={'mini-map'+(collapsed?' collapsed':'')} aria-label="Planta 3D com pontos de visita">
@@ -185,13 +189,13 @@ export default function Tour() {
       </footer>
       <p className="sr-only" id="announcement" role="status">{current.floor} — {current.title}</p>
     </main>
-    <dialog id="rooms" aria-labelledby="rooms-title" ref={roomsDialog}>
+    <dialog id="rooms" aria-labelledby="rooms-title" ref={roomsDialog} onClose={()=>setRoomsOpen(false)}>
       <div className="panel-heading"><div><p className="eyebrow">ESCOLHA O SEU PERCURSO</p><h2 id="rooms-title">Explore a casa</h2></div><button id="close-menu" className="close-button" aria-label="Fechar divisões" onClick={()=>roomsDialog.current.close()}><Icon name="close"/></button></div>
       <div className="floor-tabs" id="floor-tabs" aria-label="Filtrar por piso">{['Todas',...floors].map(value=><button key={value} aria-pressed={floor===value} onClick={()=>{setFloor(value);roomList.current.scrollTop=0;}}>{value}</button>)}</div>
-      <div className="room-list" id="room-list" ref={roomList}>{scenes.filter(scene=>floor==='Todas'||scene.floor===floor).map(scene=><button key={scene.id} className="room-card" data-scene={scene.id} aria-current={current.id===scene.id} onClick={()=>go(scene.id)}><img src={scene.thumb} alt="" width="100" height="70" loading="lazy"/><span className="room-info"><small>{scene.floor}</small><strong>{scene.title}</strong><span>{scene.detail}</span></span></button>)}</div>
+      <div className="room-list" id="room-list" ref={roomList}>{roomsOpen&&scenes.filter(scene=>floor==='Todas'||scene.floor===floor).map(scene=><button key={scene.id} className="room-card" data-scene={scene.id} aria-current={current.id===scene.id} onClick={()=>go(scene.id)}><img src={scene.thumb} alt="" width="100" height="70" loading="lazy" decoding="async"/><span className="room-info"><small>{scene.floor}</small><strong>{scene.title}</strong><span>{scene.detail}</span></span></button>)}</div>
       <p className="panel-note">Escolha uma vista e explore em 360°.</p>
     </dialog>
-    <dialog id="map-dialog" aria-labelledby="map-title" ref={mapDialog}>
+    <dialog id="map-dialog" aria-labelledby="map-title" ref={mapDialog} onClose={()=>setMapOpen(false)}>
       <div className="panel-heading"><div><p className="eyebrow">ORIENTE-SE NA VISITA</p><h2 id="map-title">Planta 3D</h2></div><button id="close-map" className="close-button" aria-label="Fechar mapa" onClick={()=>mapDialog.current.close()}><Icon name="close"/></button></div>
       <div className="floor-tabs" id="map-floors" aria-label="Piso do mapa">{floors.map(value=><button key={value} aria-pressed={mapFloor===value} onClick={()=>setMapFloor(value)}>{value}</button>)}</div>
       <div className="map-body" ref={mapBody}><div className="full-map-image" id="full-map-image" ref={fullMap}/><nav className="map-locations" id="map-locations" aria-label="Posições neste piso">{scenes.filter(scene=>scene.floor===mapFloor).map(scene=><button className="map-location" data-scene={scene.id} key={scene.id} aria-current={current.id===scene.id} onClick={()=>go(scene.id)}><strong>{scene.title}</strong><small>{scene.detail}</small></button>)}</nav></div>
