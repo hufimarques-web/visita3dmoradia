@@ -5,7 +5,7 @@ export const metadata = {
   applicationName: 'Moradia',
   manifest: '/manifest.webmanifest',
   appleWebApp: { capable: true, title: 'Moradia', statusBarStyle: 'black-translucent' },
-  other: { 'mobile-web-app-capable': 'yes' },
+  other: { 'mobile-web-app-capable': 'yes', 'apple-mobile-web-app-capable': 'yes' },
   metadataBase: new URL('https://visita3dmoradia-vvtu.vercel.app'),
   title: 'Domaine XXV — Visite a moradia em 360°',
   description: 'Conheça a Domaine XXV em Oliveirinha, Aveiro. Explore a sala, a cozinha, os quartos e o jardim numa visita imersiva em 360°.',
