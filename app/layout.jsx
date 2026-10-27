@@ -2,6 +2,10 @@ import './globals.css';
 import './mobile.css';
 
 export const metadata = {
+  applicationName: 'Moradia',
+  manifest: '/manifest.webmanifest',
+  appleWebApp: { capable: true, title: 'Moradia', statusBarStyle: 'black-translucent' },
+  other: { 'mobile-web-app-capable': 'yes' },
   metadataBase: new URL('https://visita3dmoradia-vvtu.vercel.app'),
   title: 'Domaine XXV — Visite a moradia em 360°',
   description: 'Conheça a Domaine XXV em Oliveirinha, Aveiro. Explore a sala, a cozinha, os quartos e o jardim numa visita imersiva em 360°.',
@@ -17,7 +21,7 @@ export const metadata = {
     description: 'Oliveirinha, Aveiro · Entre e descubra a sua próxima casa.',
     images: ['/assets/domaine-xxv-fachada-social.jpg'],
   },
-  icons: { icon: '/assets/mark.svg' },
+  icons: { icon: '/assets/mark.svg', apple: '/icons/apple-touch-icon.png' },
 };
 export const viewport = {
   width: 'device-width', initialScale: 1, viewportFit: 'cover', themeColor: '#202b27',
